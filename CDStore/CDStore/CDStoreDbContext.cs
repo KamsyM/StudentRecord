@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
-
+﻿using System.Data.Entity;
 
 namespace CDStore
 {
@@ -12,12 +6,12 @@ namespace CDStore
     {
         public CDStoreDbContext() : base("myConnectionString")
         {
-            Database.SetInitializer(new CustomInitializer());
+            Database.SetInitializer(
+                new CustomInitializer());
         }
 
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Song> Songs { get; set; }
-        
     }
-
 }
+

@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CDStore
 {
     public class Song
     {
-        public int SongId { get; set; }
+        public virtual int SongId { get; set; }
 
-        public string Title { get; set; }
+        public virtual string Title { get; set; }
 
-        public Artist Artist { get; set; }
+        public virtual Artist Artist { get; set; }
 
-        public string MusicType { get; set; }
+        public virtual string MusicType { get; set; }
     }
 }
+

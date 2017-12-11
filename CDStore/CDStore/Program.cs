@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CDStore
 {
@@ -14,7 +11,7 @@ namespace CDStore
             bool keepGoing = true;
             while (keepGoing)
             {
-                Console.Write("\n\nEnter 1 to add an Artist; 2 to List Artists; 9 to Quit : ");
+                Console.Write("\n\nEnter 1 to add an Artist \n2 to List Artists \n3 Find artist\n9 to Quit : ");
                 char key = Console.ReadLine()[0];
                 switch (key)
                 {
@@ -24,11 +21,22 @@ namespace CDStore
                     case '2':
                         ListArtists(context);
                         break;
+                    case '3':
+                        FindArtist(context);
+                        break;
                     case '9':
                         keepGoing = false;
                         break;
                 }
             }
+        }
+
+        private static void FindArtist(CDStoreDbContext context)
+        {
+            Console.WriteLine("Enter Artist's name: ");
+            var name = Console.ReadLine();
+            var artist = context.Artists.FirstOrDefault(a => a.Name.Contains(name));
+            Console.WriteLine("Artist: " + artist.Name);
         }
 
         private static void ListArtists(CDStoreDbContext context)

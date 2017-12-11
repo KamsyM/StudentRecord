@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Entity;
 
 namespace CDStore
@@ -18,17 +14,17 @@ namespace CDStore
             var jj = CreateArtist(context, "JJ");
             var rap = CreateArtist(context, "Rapport");
 
-            CreateSong(context, "Waterfall", jj, "Americana");
-            CreateSong(context, "Shake it", fb, "Heavy Metal");
-            CreateSong(context, "Come Away", bh, "Americana");
-            CreateSong(context, "Volcano", mo, "Art Pop");
-            CreateSong(context, "Complicated Game", jj, "Americana");
-            CreateSong(context, "Ghost Town", fb, "Heavy Metal");
-            CreateSong(context, "Gentle Waves", mo, "Art Pop");
-            CreateSong(context, "Right Here", mo, "Art Pop");
-            CreateSong(context, "Clouds", jm, "Art Pop");
-            CreateSong(context, "Sheet Steel", rap, "Heavy Metal");
-            CreateSong(context, "Here with you", bh, "Art Pop");
+            var waterfall = CreateSong(context, "Waterfall", jj, "Americana");
+            var shakeIt = CreateSong(context, "Shake it", fb, "Heavy Metal");
+            var comeAway = CreateSong(context, "Come Away", bh, "Americana");
+            var volcano = CreateSong(context, "Volcano", mo, "Art Pop");
+            var complicatedGame = CreateSong(context, "Complicated Game", jj, "Americana");
+            var ghostTown = CreateSong(context, "Ghost Town", fb, "Heavy Metal");
+            var gentleWaves = CreateSong(context, "Gentle Waves", mo, "Art Pop");
+            var rightHere = CreateSong(context, "Right Here", mo, "Art Pop");
+            var clouds = CreateSong(context, "Clouds", jm, "Art Pop");
+            var sheetSteel = CreateSong(context, "Sheet Steel", rap, "Heavy Metal");
+            var hereWithYou = CreateSong(context, "Here with you", bh, "Art Pop");
         }
 
         private Artist CreateArtist(CDStoreDbContext context, string name)
@@ -48,3 +44,4 @@ namespace CDStore
         }
     }
 }
+
